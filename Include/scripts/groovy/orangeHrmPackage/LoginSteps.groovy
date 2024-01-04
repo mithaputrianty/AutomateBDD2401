@@ -50,9 +50,6 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 
 
 class LoginSteps {
-	/**
-	 * The step definitions below match with Katalon sample Gherkin steps
-	 */
 
 	@BeforeTestCase
 	def beforeTestCase(TestCaseContext testCaseContext) {

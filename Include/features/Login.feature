@@ -18,7 +18,7 @@
 #Sample Feature Definition Template
 @LoginFeature
 Feature: Login
-  I want to login to OrangeHRM websites
+  I want to login to OrangeHRM websites1
 
   @TCL01
   Scenario: Login using valid credential
