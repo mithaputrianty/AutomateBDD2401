@@ -42,58 +42,54 @@ import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
-//import orangeHrmPackage.myCucumberRunner
-import com.kms.katalon.core.annotation.AfterTestCase
-import com.kms.katalon.core.annotation.BeforeTestCase
-import com.kms.katalon.core.context.TestCaseContext
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-
 
 class LoginSteps {
 
-	@BeforeTestCase
-	def beforeTestCase(TestCaseContext testCaseContext) {
-		CucumberKW.GLUE = ['orangeHrmPackage']
-	}
 
 	@Given("User access OrangeHRM website")
 	def accessOrangehrm() {
 		WebUI.openBrowser('')
-		WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+		WebUI.maximizeWindow()
+		WebUI.navigateToUrl(GlobalVariable.urlOrangeHrm)
 	}
 
-	@When("User enter valid (.*)")
-	def User_enter_valid_username(String username) {
-		WebUI.setText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_username'), username)
+	@When("User enter valid username (.*) and (.*)")
+	def User_enter_valid_username(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), username)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
+	}
+	
+	@When("User enter valid username and password")
+	def enterValidUsernamePassword() {
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), GlobalVariable.usernameValidLogin)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), GlobalVariable.passwordValidLogin)
 	}
 
-	@When("User enter invalid (.*)")
+	@When("User enter invalid username (.*)")
 	def User_enter_invalid_username(String username) {
-		WebUI.setEncryptedText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_username'), username)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), username)
 	}
 
-	@When("User enter valid (.*)")
-	def User_enter_valid_password(String password) {
-		WebUI.setEncryptedText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_password'), password)
-	}
-
-	@When("User enter invalid (.*)")
+	@When("User enter invalid password (.*)")
 	def User_enter_invalid_password(String password) {
-		WebUI.setEncryptedText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_password'), password)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
 	}
 
 	@When("User click Login button")
 	def User_click_Login_button() {
-		WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/button_Login'))
-	}
-
-	@Then("User redirect to Dashboard page")
-	def User_redirect_to_Dashboard_page() {
-		WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/h6_Dashboard'))
+		WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
 	}
 
 	@Then("User see error message on Login page")
 	def User_see_error_message_on_Login_page() {
-		WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/div_Invalid credentials'))
+		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'), FailureHandling.STOP_ON_FAILURE)
+		//WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'))
+		WebUI.closeBrowser()
+	}
+
+	@Then("User redirect to Dashboard page")
+	def User_redirect_to_Dashboard_page() {
+		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Dashboard/h6_Dashboard'), FailureHandling.STOP_ON_FAILURE)
+		WebUI.closeBrowser()
 	}
 }

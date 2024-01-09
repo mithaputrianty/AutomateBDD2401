@@ -42,11 +42,37 @@ import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
-import org.junit.runner.RunWith
-import cucumber.api.CucumberOptions
-import cucumber.api.junit.Cucumber
 
 
-@RunWith(Cucumber.class)
-@CucumberOptions(features = "Include/features", glue = "orangeHrmPackage")
-public class myCucumberRunner {}
+class UserManagementAdminSteps {
+	@Given("User login as Admin")
+	def loginAsAdmin() {
+		WebUI.openBrowser('')
+		WebUI.maximizeWindow()
+		WebUI.navigateToUrl(GlobalVariable.urlOrangeHrm)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), GlobalVariable.usernameValidLogin)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), GlobalVariable.passwordValidLogin)
+		WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
+	}
+	
+	@When("User click Admin menu")
+	def accessAdminMenu() {
+		WebUI.click(findTestObject('Object Repository/OrangeHRM/Dashboard/admin_menu'))
+		WebUI.click(findTestObject('Object Repository/OrangeHRM/Admin Page/admin_page'))
+	}
+		
+	@And("User input (.*) on Username field")
+	def inputUsernameManagement(String username) {
+		
+	}
+	
+	@And("User click Search button")
+	def searchBtnUserManagement() {
+		
+	}
+
+	@Then("User will see search result on username table")
+	def searchResultValid() {
+		
+	}
+}

@@ -21,19 +21,19 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
-WebUI.setText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_username'), 'Admin')
+WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), 'Admin')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_password'), '/5S6MFFLcE4mlsixtc6/Tg==')
+WebUI.setEncryptedText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), '/5S6MFFLcE4mlsixtc6/Tg==')
 
-WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/button_Login'))
+WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
 
-WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/div_Invalid credentials'))
+WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'))
 
-WebUI.setText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_username'), 'Admin')
+WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), 'Admin')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Login feature/Page_OrangeHRM/input_password'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+WebUI.setEncryptedText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), 'hUKwJTbofgPU9eVlw/CnDQ==')
 
-WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/button_Login'))
+WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
 
-WebUI.click(findTestObject('Object Repository/Login feature/Page_OrangeHRM/h6_Dashboard'))
+WebUI.click(findTestObject('Object Repository/OrangeHRM/Dashboard/h6_Dashboard'))
 
