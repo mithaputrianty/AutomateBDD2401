@@ -8,7 +8,7 @@ Feature: Login
   @TCL01
   Scenario: Login using valid credential
     Given User access OrangeHRM website
-		When User enter valid username and password
+		When User enter valid username and password on OrangeHRM website
 		And User click Login button
 		Then User redirect to Dashboard page
 

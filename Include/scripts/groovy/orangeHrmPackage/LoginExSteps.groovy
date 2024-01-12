@@ -59,7 +59,7 @@ class LoginExSteps {
 		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
 	}
 
-	@When("User enter valid username and password")
+	@When("User enter valid username and password on OrangeHRM website")
 	def enterValidUsernamePassword() {
 		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), GlobalVariable.usernameValidLogin)
 		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), GlobalVariable.passwordValidLogin)

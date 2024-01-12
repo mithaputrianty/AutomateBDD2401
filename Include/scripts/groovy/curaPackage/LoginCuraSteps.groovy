@@ -49,13 +49,13 @@ class LoginCuraSteps {
 	def accessCura() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
-		WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/profile.php#login')
+		WebUI.navigateToUrl(GlobalVariable.urlCuraHealthcare)
 	}
 
-	@When("User enter valid data (.*) and (.*)")
-	def User_enter_valid_username_password(String username, String password) {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), username)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), password)
+	@When("User enter valid username and password")
+	def enterValidUsernamePasswordCura() {
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), GlobalVariable.usernameCura)
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), GlobalVariable.passwordCura)
 	}
 
 	@And("User click Login button on Cura Login page")
@@ -65,7 +65,19 @@ class LoginCuraSteps {
 
 	@Then("User redirect to Appointment page")
 	def User_redirect_to_Appointment_page() {
-		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'))
+		WebUI.verifyElementPresent(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'), 0)
 		//WebUI.closeBrowser()
+	}
+
+	@When("User enter invalid data (.*) and (.*)")
+	def enterInvalidData(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), username)
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), password)
+	}
+
+	@Then("User expect to see error message on Login page")
+	def seeErrorMessageonLoginPage() {
+		WebUI.verifyTextPresent('Login failed! Please ensure the username and password are valid.', false)
+		WebUI.closeBrowser()
 	}
 }
