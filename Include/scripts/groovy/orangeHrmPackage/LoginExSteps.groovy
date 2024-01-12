@@ -43,41 +43,53 @@ import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
 
+class LoginExSteps {
 
-class UserManagementAdminSteps {
-	@Given("User login as Admin")
-	def loginAsAdmin() {
+
+	@Given("User access OrangeHRM website")
+	def accessOrangehrm() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.navigateToUrl(GlobalVariable.urlOrangeHrm)
+	}
+
+	@When("User enter valid username (.*) and (.*)")
+	def User_enter_valid_username(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), username)
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
+	}
+
+	@When("User enter valid username and password")
+	def enterValidUsernamePassword() {
 		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), GlobalVariable.usernameValidLogin)
 		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), GlobalVariable.passwordValidLogin)
+	}
+
+	@When("User enter invalid username (.*)")
+	def User_enter_invalid_username(String username) {
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), username)
+	}
+
+	@When("User enter invalid password (.*)")
+	def User_enter_invalid_password(String password) {
+		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
+	}
+
+	@When("User click Login button")
+	def User_click_Login_button() {
 		WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
 	}
 
-	@When("User click Admin menu")
-	def accessAdminMenu() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Dashboard/admin_menu'))
-		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Admin Page/admin_page'))
+	@Then("User see error message on Login page")
+	def User_see_error_message_on_Login_page() {
+		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'), FailureHandling.STOP_ON_FAILURE)
+		//WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'))
+		WebUI.closeBrowser()
 	}
 
-	@And("User input username (.*) on System Users")
-	def inputUsernameManagement(String username) {
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Admin Page/usernameSearchField'), username)
-	}
-
-	@And("User click Search button on System Users")
-	def searchBtnSystemUsers() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Admin Page/searchBtn'))
-	}
-
-	@Then("User will see search result on username table")
-	def searchResultValid() {
-		WebUI.scrollToElement(findTestObject('Object Repository/OrangeHRM/Admin Page/recordFound'), 0)
-	}
-
-	@And("User click Add button on User Management")
-	def clickAddUserManagement() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Admin Page/addBtn'))
+	@Then("User redirect to Dashboard page")
+	def User_redirect_to_Dashboard_page() {
+		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Dashboard/h6_Dashboard'), FailureHandling.STOP_ON_FAILURE)
+		//WebUI.closeBrowser()
 	}
 }

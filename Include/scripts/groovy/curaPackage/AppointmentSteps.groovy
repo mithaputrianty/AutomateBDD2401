@@ -1,4 +1,4 @@
-package orangeHrmPackage
+package curaPackage
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -43,53 +43,54 @@ import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
 
-class LoginSteps {
 
-
-	@Given("User access OrangeHRM website")
-	def accessOrangehrm() {
+class AppointmentSteps {
+	@Given("User login")
+	def userLogin() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
-		WebUI.navigateToUrl(GlobalVariable.urlOrangeHrm)
+		WebUI.navigateToUrl(GlobalVariable.urlCuraHealthcare)
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), GlobalVariable.usernameCura)
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), GlobalVariable.passwordCura)
+		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Login Page/loginBtn'))
 	}
 
-	@When("User enter valid username (.*) and (.*)")
-	def User_enter_valid_username(String username, String password) {
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), username)
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
+	@When("User choose Facility (.*)")
+	def chooseFacility(String facility) {
+		WebUI.selectOptionByValue(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'), facility, false)
 	}
 	
-	@When("User enter valid username and password")
-	def enterValidUsernamePassword() {
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), GlobalVariable.usernameValidLogin)
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), GlobalVariable.passwordValidLogin)
+	@And("User choose Healthcare Program (.*)")
+	def chooseHealthcareProgram(String healthcareProgram) {
+		if (healthcareProgram == 'Medicare') {
+			WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/medicareRadioBtn'))
+		}
+		else if (healthcareProgram == 'Medicaid') {
+			WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/medicaidRadioBtn'))
+		}
+		else if (healthcareProgram == 'None') {
+			WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/noneRadioBtn'))
+		}
+	}
+	
+	@And("User choose Visit Date (.*)")
+	def chooseVisitDate(String visitDate) {
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Appointment Page/visitDatePicker'), visitDate)
+	}
+	
+	@And("User input Comment (.*)")
+	def inputComment(String comment) {
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Appointment Page/commentTextBox'), comment)
+	}
+	
+	@And("User click Book Appointment button")
+	def clickBookAppointment() {
+		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/bookAppointmentBtn'))
 	}
 
-	@When("User enter invalid username (.*)")
-	def User_enter_invalid_username(String username) {
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), username)
-	}
-
-	@When("User enter invalid password (.*)")
-	def User_enter_invalid_password(String password) {
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), password)
-	}
-
-	@When("User click Login button")
-	def User_click_Login_button() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
-	}
-
-	@Then("User see error message on Login page")
-	def User_see_error_message_on_Login_page() {
-		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'), FailureHandling.STOP_ON_FAILURE)
-		//WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'))
-		WebUI.closeBrowser()
-	}
-
-	@Then("User redirect to Dashboard page")
-	def User_redirect_to_Dashboard_page() {
-		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Dashboard/h6_Dashboard'), FailureHandling.STOP_ON_FAILURE)
+	@Then("Appointment has been created")
+	def appointmentCreated() {
+		WebUI.verifyTextPresent('Appointment Confirmation', false)
 		WebUI.closeBrowser()
 	}
 }

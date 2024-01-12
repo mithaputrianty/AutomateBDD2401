@@ -1,4 +1,4 @@
-package orangeHrmPackage
+package curaPackage
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -44,40 +44,28 @@ import cucumber.api.java.en.When
 
 
 
-class UserManagementAdminSteps {
-	@Given("User login as Admin")
-	def loginAsAdmin() {
+class LoginCuraSteps {
+	@Given("User access Cura Healthcare website")
+	def accessCura() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
-		WebUI.navigateToUrl(GlobalVariable.urlOrangeHrm)
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_username'), GlobalVariable.usernameValidLogin)
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Login Page/input_password'), GlobalVariable.passwordValidLogin)
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/button_Login'))
+		WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/profile.php#login')
 	}
 
-	@When("User click Admin menu")
-	def accessAdminMenu() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Dashboard/admin_menu'))
-		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Admin Page/admin_page'))
+	@When("User enter valid data (.*) and (.*)")
+	def User_enter_valid_username_password(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), username)
+		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), password)
 	}
 
-	@And("User input username (.*) on System Users")
-	def inputUsernameManagement(String username) {
-		WebUI.setText(findTestObject('Object Repository/OrangeHRM/Admin Page/usernameSearchField'), username)
+	@And("User click Login button on Cura Login page")
+	def User_click_Login_button_on_Cura_Login_page() {
+		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Login Page/loginBtn'))
 	}
 
-	@And("User click Search button on System Users")
-	def searchBtnSystemUsers() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Admin Page/searchBtn'))
-	}
-
-	@Then("User will see search result on username table")
-	def searchResultValid() {
-		WebUI.scrollToElement(findTestObject('Object Repository/OrangeHRM/Admin Page/recordFound'), 0)
-	}
-
-	@And("User click Add button on User Management")
-	def clickAddUserManagement() {
-		WebUI.click(findTestObject('Object Repository/OrangeHRM/Admin Page/addBtn'))
+	@Then("User redirect to Appointment page")
+	def User_redirect_to_Appointment_page() {
+		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'))
+		//WebUI.closeBrowser()
 	}
 }
