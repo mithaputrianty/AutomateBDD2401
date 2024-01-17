@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>rowDataChosen</name>
+   <tag></tag>
+   <elementGuidId>7d0e8fce-5d57-4ba4-a8f1-fba6fd52421b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@role = 'alert']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>odd</value>
+      <webElementGuid>58f65618-0dfa-4ea9-9ae9-4bd8b8c7e5fb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>role</name>
+      <type>Main</type>
+      <value>alert</value>
+      <webElementGuid>29f3e9f5-1400-4482-9ebb-e6e4bf818070</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

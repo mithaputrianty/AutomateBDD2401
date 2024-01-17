@@ -45,9 +45,6 @@ import cucumber.api.java.en.When
 
 
 class LoginMRSSteps {
-	/**
-	 * The step definitions below match with Katalon sample Gherkin steps
-	 */
 	@Given("User access Open MRS website")
 	def accessOpenMRSwebsite() {
 		WebUI.openBrowser('')
@@ -57,14 +54,14 @@ class LoginMRSSteps {
 
 	@When("User input valid username (.*) on Open MRS")
 	def inputValidUsernameOpenMRS(String username) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/usernameField'), username)	
+		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/usernameField'), username)
 	}
-	
+
 	@And("User input valid password (.*) on Open MRS")
 	def inputValidPasswordOpenMRS(String password) {
 		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/passwordField'), password)
 	}
-	
+
 	@And("User choose Location (.*) for the session")
 	def chooseLocationForTheSession(String location) {
 		if (location == 'Inpatient Ward') {
@@ -86,7 +83,7 @@ class LoginMRSSteps {
 			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/registrationDeskSession'))
 		}
 	}
-	
+
 	@And("User click Login button on Open MRS")
 	def clickLoginBtnOnOpenMRS() {
 		WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/loginBtn'))
@@ -94,6 +91,30 @@ class LoginMRSSteps {
 
 	@Then("User redirect to homepage as Super User at (.*)")
 	def redirectToHomepageAsSuperUser(String location) {
-		
+		if (location == 'Inpatient Ward') {
+			WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/homePage/selectedLocation'))
+			WebUI.verifyTextPresent('Logged in as Super User (admin) at Inpatient Ward.', false)
+		}
+		else if (location == 'Isolation Ward') {
+			WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/homePage/selectedLocation'))
+			WebUI.verifyTextPresent('Logged in as Super User (admin) at Isolation Ward.', false)
+		}
+		else if (location == 'Laboratory') {
+			WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/homePage/selectedLocation'))
+			WebUI.verifyTextPresent('Logged in as Super User (admin) at Laboratory.', false)
+		}
+		else if (location == 'Outpatient Clinic') {
+			WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/homePage/selectedLocation'))
+			WebUI.verifyTextPresent('Logged in as Super User (admin) at Outpatient Clinic.', false)
+		}
+		else if (location == 'Pharmacy') {
+			WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/homePage/selectedLocation'))
+			WebUI.verifyTextPresent('Logged in as Super User (admin) at Pharmacy.', false)
+		}
+		else if (location == 'Registration Desk') {
+			WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/homePage/selectedLocation'))
+			WebUI.verifyTextPresent('Logged in as Super User (admin) at Registration Desk.', false)
+		}
+		WebUI.closeBrowser()
 	}
 }

@@ -16,9 +16,8 @@ Feature: Login MRS
     Examples: 
       | username  | password	| location	|
       |	Admin	|	Admin123	| Inpatient Ward	|
-      #|	Admin	|	Admin123	| Isolation Ward	|
-      #|	Admin	|	Admin123	| Laboratory	|
-      #|	Admin	|	Admin123	| Outpatient Clinic	|
-      #|	Admin	|	Admin123	| Pharmacy	|
-      #|	Admin	|	Admin123	| Registration Desk	|
-      
+      |	Admin	|	Admin123	| Isolation Ward	|
+      |	Admin	|	Admin123	| Laboratory	|
+      |	Admin	|	Admin123	| Outpatient Clinic	|
+      |	Admin	|	Admin123	| Pharmacy	|
+      |	Admin	|	Admin123	| Registration Desk	|
