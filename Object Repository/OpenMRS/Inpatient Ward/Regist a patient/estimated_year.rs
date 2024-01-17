@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>estimated_year</name>
+   <tag></tag>
+   <elementGuidId>820ea0ed-7ec3-4389-ab79-0463aa1988a2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'birthdateYears-field' and @name = 'birthdateYears']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>birthdateYears-field</value>
+      <webElementGuid>6be87201-cd7f-4c26-b09c-912e397404e4</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>birthdateYears</value>
+      <webElementGuid>703713df-a81b-4cc1-8651-9ffbb77cf405</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

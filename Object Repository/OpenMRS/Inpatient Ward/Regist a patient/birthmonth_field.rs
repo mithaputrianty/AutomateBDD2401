@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>birthmonth_field</name>
+   <tag></tag>
+   <elementGuidId>933f075b-6c68-46d2-90ea-8c3afbace98b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'birthdateMonth-field' and @name = 'birthdateMonth']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>birthdateMonth-field</value>
+      <webElementGuid>b41664f9-cb16-4b81-947e-65e914ab761a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>birthdateMonth</value>
+      <webElementGuid>fef7a961-24a9-419a-ac13-da054e4dbb77</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

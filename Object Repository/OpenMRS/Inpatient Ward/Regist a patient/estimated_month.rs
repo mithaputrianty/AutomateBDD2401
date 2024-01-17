@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>estimated_month</name>
+   <tag></tag>
+   <elementGuidId>32e3bf74-1c4e-491d-a9dc-a476091a7e16</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'birthdateMonths-field' and @name = 'birthdateMonths']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>birthdateMonths-field</value>
+      <webElementGuid>7033d063-d000-4100-a16c-e5704d77b809</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>birthdateMonths</value>
+      <webElementGuid>1ce57250-7b91-4af3-8f40-59f4f6be4042</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

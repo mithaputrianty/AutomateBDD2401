@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "1199B825D665200DE7E7DD4565F07784",
+  "keywordClasses": [
+    {
+      "name": "openMrsPackage.RegisterPatient",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

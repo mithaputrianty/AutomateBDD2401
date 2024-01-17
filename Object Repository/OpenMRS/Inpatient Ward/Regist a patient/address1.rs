@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>address1</name>
+   <tag></tag>
+   <elementGuidId>83bf56e6-4004-4af9-b6c5-951d24e69311</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'address1' and @name = 'address1']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>address1</value>
+      <webElementGuid>7f6d82ed-1d29-4949-9614-ccb7a720a5a8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>address1</value>
+      <webElementGuid>8b08aeb7-d6cd-4341-8403-c3c21d56d9ae</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

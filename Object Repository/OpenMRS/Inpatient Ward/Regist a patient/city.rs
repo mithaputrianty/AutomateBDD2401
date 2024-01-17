@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>city</name>
+   <tag></tag>
+   <elementGuidId>3e8ad130-ce09-4b2a-8693-f9016a1eab99</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'cityVillage' and @name = 'cityVillage']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>cityVillage</value>
+      <webElementGuid>1b626e5c-58e9-41fd-937c-3e00433ef39f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>cityVillage</value>
+      <webElementGuid>87a93d6f-a53e-4515-b42c-9a5831300dca</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

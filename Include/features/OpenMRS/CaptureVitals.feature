@@ -24,5 +24,5 @@ Feature: Capture Vitals
 
     Examples: 
       |	patientData	|	height	|	weight	|	temperature	| pulse	| respiratoryRate	| systolic	|	diastolic	|	oxygenSaturation	|
-      |	Justin Raj	|	167	|	56	|	36.5	|	80	|	16	|	121	|	85	|	98	|
-      |	100HYE	|	167	|	56	|	36.5	|	80	|	16	|	121	|	85	|	98	|
+      |	Justin Raj	|	167			|	56			|	36.5				|	80		|	16							|	121				|	85				|	98								|
+      |	100HYE			|	167			|	56			|	36.5				|	80		|	16							|	121				|	85				|	98								|

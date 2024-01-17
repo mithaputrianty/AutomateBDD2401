@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>postal_code</name>
+   <tag></tag>
+   <elementGuidId>b96d6665-77b3-4223-9cf7-980468c7d93d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'postalCode' and @name = 'postalCode']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>postalCode</value>
+      <webElementGuid>41430f0d-2f6c-451d-9eed-a664b5cbd079</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>postalCode</value>
+      <webElementGuid>e35de769-598e-483f-8456-ea90d06cc8bf</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>birthyear_field</name>
+   <tag></tag>
+   <elementGuidId>0a6e9652-c2b6-45fb-ba6c-b78dfb92cce7</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'birthdateYear-field' and @name = 'birthdateYear']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>birthdateYear-field</value>
+      <webElementGuid>71f6a21a-d326-43dd-a9af-2ac7af1b9422</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>birthdateYear</value>
+      <webElementGuid>381b540b-187c-41bf-9488-be37d572e97a</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

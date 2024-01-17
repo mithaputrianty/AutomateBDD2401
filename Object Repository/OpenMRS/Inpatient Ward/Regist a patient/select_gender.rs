@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_gender</name>
+   <tag></tag>
+   <elementGuidId>05bc883c-f97f-4d4f-ac76-1c2ca0fbab5e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'gender-field' and @name = 'gender']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>gender-field</value>
+      <webElementGuid>464d1409-3e04-4883-ab73-c37be11f8a96</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>gender</value>
+      <webElementGuid>c6b2ed8f-32cb-42bc-9400-b828e329290c</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -44,12 +44,12 @@ import cucumber.api.java.en.When
 
 
 
-class CaptureVitalsSteps {
+class RegisterPatient {
 	/**
 	 * The step definitions below match with Katalon sample Gherkin steps
 	 */
-	@Given("User login as Super User at (.*)")
-	def loginAsSuperUserAt(String location) {
+	@Given("User already logged in as Inpatient Ward")
+	def user_already_logged_in_as_inpatient_ward() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.navigateToUrl(GlobalVariable.baseUrl)
@@ -104,85 +104,114 @@ class CaptureVitalsSteps {
 		 WebUI.verifyTextPresent('Logged in as Super User (admin) at Registration Desk.', false)
 		 }*/
 	}
-
-	@And("User click Capture Vitals menu")
-	def clickCaptureVitalsMenu() {
-		WebUI.click(findTestObject('Object Repository/OpenMRS/homePage/captureVitalsBtn'))
+	
+	@Given("User click register icon")
+	def user_click_register_icon() {
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/regist_icon"))
 	}
 
-	@And("User choose Patient Data (.*)")
-	def inputPatientData(String patientData) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/patientSearchField'), patientData)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/rowDataChosen'))
+	@When("User input given name(.*)")
+	def user_input_given_name(String given) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/given_name"), given)
 	}
 
-	@And("User click Yes, Record Vitals button")
-	def clickYesRecordVitalsBtn() {
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/yesRecordVitalsBtn'))
+	@And("User input middle name(.*)")
+	def user_input_middle_name(String middle) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/middle_name"), middle)
 	}
 
-	@And("User input patient's Height (.*) cm")
-	def inputPatientsHeight(String height) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/heightField'), height)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User input family name(.*)")
+	def user_input_family_name(String family) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/family_name"), family)
 	}
 
-	@And("User input patient's Weight (.*) kg")
-	def inputPatientsWeight(String weight) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/weightField'), weight)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User click button next")
+	def user_click_button_next() {
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/next_button"))
 	}
 
-	@And("User see patient's BMI")
-	def seePatientsBMI() {
-		WebUI.verifyElementPresent(findTestObject('Object Repository/OpenMRS/captureVitalsPage/patientBMI'), 0)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
-	}
-	@And("User input patient's Temperature (.*) Celcius")
-	def inputPatientsTemperature(String temperature) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/temperatureField'), temperature)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User select gender(.*)")
+	def user_select_gender(String gender) {
+		WebUI.selectOptionByValue("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/select_gender", gender, false)
 	}
 
-	@And("User input patient's Pulse (.*) per minutes")
-	def inputPatientsPulse(String pulse) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/pulseField'), pulse)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User input birth date(.*)")
+	def user_input_birth_date(String bdate) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthdate_field"), bdate)
 	}
 
-	@And("User input patient's Respiratory Rate (.*) per minutes")
-	def inputPatientsRespiratoryRate(String respiratoryRate) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/respiratoryField'), respiratoryRate)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User select birth month(.*)")
+	def user_input_birth_month(String bmonth) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthmonth_field"), bmonth)
 	}
 
-	@And("User input patient's Blood Pressure (.*) and (.*)")
-	def inputPatientsBloodPresure(String systolic, String diastolic) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/systolicField'), systolic)
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/diastolicField'), diastolic)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User input birth year(.*)")
+	def user_input_birth_year(String byear) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthyear_field"), byear)
 	}
 
-	@And("User input patient's Oxygen Saturation (.*) per minutes")
-	def inputPatientsOxygenSaturation(String oxygenSaturation) {
-		WebUI.setText(findTestObject('Object Repository/OpenMRS/captureVitalsPage/oxygenSaturationField'), oxygenSaturation)
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/nextBtn'))
+	@And("User input estimated year(.*)")
+	def user_input_estimated_year(String eyear) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/estimated_year"), eyear)
 	}
 
-	@And("User see submission summary")
-	def seeSubmissionSummary() {
-		WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/captureVitalsPage/submissionSummary'))
+	@And("User input estimated month(.*)")
+	def user_input_estimated_month(String emonth) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/estimated_month"), emonth)
 	}
 
-	@And("User click Save button to save Vitals Form")
-	def clickSaveBtnToSaveVitalsForm() {
-		WebUI.click(findTestObject('Object Repository/OpenMRS/captureVitalsPage/saveBtn'))
+	@And("User input address field 1(.*)")
+	def user_input_address_field1(String address1) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/address1"), address1)
 	}
 
-	@Then("Capture Vitals for patient successfully created")
-	def captureVitalsForPatietCreated() {
-		WebUI.verifyTextPresent('Entered Vitals for ', false)
-		WebUI.verifyTextPresent('Capture Vitals for Patient', false)
-		WebUI.closeBrowser()
+	@And("User input address field 2(.*)")
+	def user_input_address_field2(String address2) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/address2"), address2)
+	}
+
+	@And("User input city field(.*)")
+	def user_input_city_field(String city) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/city"), city)
+	}
+
+	@And("User input state field(.*)")
+	def user_input_state_field(String state) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/state"), state)
+	}
+
+	@And("User input country field(.*)")
+	def user_input_county_field(String country) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/country"), country)
+	}
+
+	@And("User input postal code field(.*)")
+	def user_input_postal_field(String postal) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/postal_code"), postal)
+	}
+
+	@And("User input phone number(.*)")
+	def user_input_phone_number(String phone) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/phone_numer"), phone)
+	}
+
+	@And("User select relative(.*)")
+	def user_select_relative(String relative) {
+		WebUI.selectOptionByValue("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/relation_type", relative, false)
+	}
+
+	@And("User input person name(.*)")
+	def user_input_person_name(String person) {
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/person_name"), person)
+	}
+
+	@And("User click button confirm")
+	def user_click_button_confirm() {
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/submit_form"))
+	}
+
+	@Then("User registration should be successful")
+	def user_registration_should_be_successful(String status) {
+		
 	}
 }
