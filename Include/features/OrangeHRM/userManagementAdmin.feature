@@ -4,7 +4,7 @@
 @userManagementAdminFeature
 Feature: User Management
 
-  @TCUM02
+  @TCUM01
   Scenario Outline: Searching user by username
     Given User login as Admin
     And User redirect to Dashboard page
@@ -16,3 +16,24 @@ Feature: User Management
     Examples:
     | username	| 
     | admin			|
+    
+  @TCUM02  
+  Scenario Outline: Add new user
+    Given User login as Admin
+    And User redirect to Dashboard page
+    And User click Admin menu
+    When User click Add button on User Management
+    And User redirect to Add User form
+    And User choose Role <role>
+    And User choose Employee Name <employeeName>
+    And User choose Status <status>
+    And User input Username <username>
+    And User input Password <password>
+    And User input Confirm Password <confirmPassword>
+    And User click Save button on Add User form
+    Then 
+
+    Examples:
+    | role	| 
+    | Admin	|
+    |	ESS	|

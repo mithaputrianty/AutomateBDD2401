@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>addBtn</name>
+   <name>addUserForm</name>
    <tag></tag>
-   <elementGuidId>80eb94f3-0981-4d8e-84a0-202822ce8bf1</elementGuidId>
+   <elementGuidId>c1f2505f-e7b0-4b70-9cd7-5eb0a00d5901</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'oxd-button oxd-button--medium oxd-button--secondary']</value>
+         <value>//*[@class = 'oxd-text oxd-text--h6 orangehrm-main-title']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>oxd-button oxd-button--medium oxd-button--secondary</value>
-      <webElementGuid>38110ff7-b140-44f0-9a23-43f42025df74</webElementGuid>
+      <value>oxd-text oxd-text--h6 orangehrm-main-title</value>
+      <webElementGuid>b1350344-b0a1-4875-aadb-dd4595c6fab5</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

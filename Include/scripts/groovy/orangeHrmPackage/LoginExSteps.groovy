@@ -83,7 +83,6 @@ class LoginExSteps {
 	@Then("User see error message on Login page")
 	def User_see_error_message_on_Login_page() {
 		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'), FailureHandling.STOP_ON_FAILURE)
-		//WebUI.click(findTestObject('Object Repository/OrangeHRM/Login Page/div_Invalid credentials'))
 		WebUI.closeBrowser()
 	}
 
@@ -91,5 +90,12 @@ class LoginExSteps {
 	def User_redirect_to_Dashboard_page() {
 		WebUI.verifyElementVisible(findTestObject('Object Repository/OrangeHRM/Dashboard/h6_Dashboard'), FailureHandling.STOP_ON_FAILURE)
 		//WebUI.closeBrowser()
+	}
+	
+	def loginValidData() {
+		accessOrangehrm()
+		enterValidUsernamePassword()
+		User_click_Login_button()
+		User_redirect_to_Dashboard_page()
 	}
 }

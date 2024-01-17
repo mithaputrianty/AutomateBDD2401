@@ -1,4 +1,4 @@
-package curaPackage
+package xyzProfilePackage
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -44,47 +44,32 @@ import cucumber.api.java.en.When
 
 
 
-class LoginCuraSteps {
-	@Given("User access Cura Healthcare website")
-	def accessCura() {
+class CustomerLoginSteps {
+	@Given("User access XYZ Profile website")
+	def accessXYZProfile() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
-		WebUI.navigateToUrl(GlobalVariable.baseUrl)
+		WebUI.navigateToUrl(GlobalVariable.baseUrl)	
 	}
 
-	@When("User enter valid username and password")
-	def enterValidUsernamePasswordCura() {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), GlobalVariable.usernameCura)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), GlobalVariable.passwordCura)
+	@When("User click Customer Login")
+	def clickCustomerLogin() {
+		WebUI.click(findTestObject('Object Repository/XYZ Profile/customerLoginBtn'))
 	}
 
-	@And("User click Login button on Cura Login page")
-	def clickLoginBtn() {
-		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Login Page/loginBtn'))
+	@And("User choose Your Name (.*)")
+	def chooseYourName(String yourName) {
+		//WebUI.selectoption
+		WebUI.selectOptionByValue(findTestObject('Object Repository/XYZ Profile/yourNameDropdown'), yourName, false)
 	}
-
-	@Then("User redirect to Appointment page")
-	def redirectToAppointmentPage() {
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'), 0)
-		//WebUI.closeBrowser()
+	
+	@And("User click Login button on XYZ Profile")
+	def clickLoginBtnOnXYZProfile() {
+		WebUI.click(findTestObject('Object Repository/XYZ Profile/loginBtnXZYProfile'))
 	}
-
-	@When("User enter invalid data (.*) and (.*)")
-	def enterInvalidData(String username, String password) {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), username)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), password)
-	}
-
-	@Then("User expect to see error message on Login page")
-	def seeErrorMessageonLoginPage() {
-		WebUI.verifyTextPresent('Login failed! Please ensure the username and password are valid.', false)
-		WebUI.closeBrowser()
-	}
-
-	def userValidLogin() {
-		accessCura()
-		enterValidUsernamePasswordCura()
-		clickLoginBtn()
-		redirectToAppointmentPage()
+	
+	@Then("User successfully login to XYZ Profile")
+	def successfullyLoginToXYZProfile() {
+		WebUI.verifyTextPresent('Welcome', false)
 	}
 }

@@ -1,4 +1,4 @@
-package curaPackage
+package openMrsPackage
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -44,47 +44,56 @@ import cucumber.api.java.en.When
 
 
 
-class LoginCuraSteps {
-	@Given("User access Cura Healthcare website")
-	def accessCura() {
+class LoginMRSSteps {
+	/**
+	 * The step definitions below match with Katalon sample Gherkin steps
+	 */
+	@Given("User access Open MRS website")
+	def accessOpenMRSwebsite() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.navigateToUrl(GlobalVariable.baseUrl)
 	}
 
-	@When("User enter valid username and password")
-	def enterValidUsernamePasswordCura() {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), GlobalVariable.usernameCura)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), GlobalVariable.passwordCura)
+	@When("User input valid username (.*) on Open MRS")
+	def inputValidUsernameOpenMRS(String username) {
+		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/usernameField'), username)	
+	}
+	
+	@And("User input valid password (.*) on Open MRS")
+	def inputValidPasswordOpenMRS(String password) {
+		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/passwordField'), password)
+	}
+	
+	@And("User choose Location (.*) for the session")
+	def chooseLocationForTheSession(String location) {
+		if (location == 'Inpatient Ward') {
+			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/inpatientWardSession'))
+		}
+		else if (location == 'Isolation Ward') {
+			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/isolationWardSession'))
+		}
+		else if (location == 'Laboratory') {
+			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/laboratorySession'))
+		}
+		else if (location == 'Outpatient Clinic') {
+			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/outpatientClinicSession'))
+		}
+		else if (location == 'Pharmacy') {
+			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/pharmacySession'))
+		}
+		else if (location == 'Registration Desk') {
+			WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/registrationDeskSession'))
+		}
+	}
+	
+	@And("User click Login button on Open MRS")
+	def clickLoginBtnOnOpenMRS() {
+		WebUI.click(findTestObject('Object Repository/OpenMRS/loginPage/loginBtn'))
 	}
 
-	@And("User click Login button on Cura Login page")
-	def clickLoginBtn() {
-		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Login Page/loginBtn'))
-	}
-
-	@Then("User redirect to Appointment page")
-	def redirectToAppointmentPage() {
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'), 0)
-		//WebUI.closeBrowser()
-	}
-
-	@When("User enter invalid data (.*) and (.*)")
-	def enterInvalidData(String username, String password) {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), username)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), password)
-	}
-
-	@Then("User expect to see error message on Login page")
-	def seeErrorMessageonLoginPage() {
-		WebUI.verifyTextPresent('Login failed! Please ensure the username and password are valid.', false)
-		WebUI.closeBrowser()
-	}
-
-	def userValidLogin() {
-		accessCura()
-		enterValidUsernamePasswordCura()
-		clickLoginBtn()
-		redirectToAppointmentPage()
+	@Then("User redirect to homepage as Super User at (.*)")
+	def redirectToHomepageAsSuperUser(String location) {
+		
 	}
 }

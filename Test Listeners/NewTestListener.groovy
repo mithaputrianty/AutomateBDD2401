@@ -6,6 +6,6 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 class NewTestListener {
     @BeforeTestCase
     def beforeTestCase(TestCaseContext testCaseContext) {
-        CucumberKW.GLUE = ['orangeHrmPackage', 'curaPackage']
+        CucumberKW.GLUE = ['orangeHrmPackage', 'curaPackage', 'xyzProfilePackage', 'openMrsPackage']
     }
 }

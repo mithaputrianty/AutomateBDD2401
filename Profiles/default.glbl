@@ -34,4 +34,9 @@
       <initValue>'ThisIsNotAPassword'</initValue>
       <name>passwordCura</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'</initValue>
+      <name>baseUrl</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

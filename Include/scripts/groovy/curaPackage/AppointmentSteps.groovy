@@ -59,7 +59,7 @@ class AppointmentSteps {
 	def chooseFacility(String facility) {
 		WebUI.selectOptionByValue(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'), facility, false)
 	}
-	
+
 	@And("User choose Healthcare Program (.*)")
 	def chooseHealthcareProgram(String healthcareProgram) {
 		if (healthcareProgram == 'Medicare') {
@@ -72,17 +72,17 @@ class AppointmentSteps {
 			WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/noneRadioBtn'))
 		}
 	}
-	
+
 	@And("User choose Visit Date (.*)")
 	def chooseVisitDate(String visitDate) {
 		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Appointment Page/visitDatePicker'), visitDate)
 	}
-	
+
 	@And("User input Comment (.*)")
 	def inputComment(String comment) {
 		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Appointment Page/commentTextBox'), comment)
 	}
-	
+
 	@And("User click Book Appointment button")
 	def clickBookAppointment() {
 		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Appointment Page/bookAppointmentBtn'))

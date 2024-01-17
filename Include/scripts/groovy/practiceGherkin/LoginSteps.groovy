@@ -1,4 +1,4 @@
-package curaPackage
+package practiceGherkin
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -44,47 +44,41 @@ import cucumber.api.java.en.When
 
 
 
-class LoginCuraSteps {
-	@Given("User access Cura Healthcare website")
-	def accessCura() {
-		WebUI.openBrowser('')
-		WebUI.maximizeWindow()
-		WebUI.navigateToUrl(GlobalVariable.baseUrl)
+class LoginSteps {
+	/**
+	 * The step definitions below match with Katalon sample Gherkin steps
+	 */
+	@Given("User access Cura Healthcare websites")
+	def accessCuraHealthcareWebsites() {
+		WebUI.openBrowser()
+		WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/profile.php#login')
 	}
 
-	@When("User enter valid username and password")
-	def enterValidUsernamePasswordCura() {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), GlobalVariable.usernameCura)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), GlobalVariable.passwordCura)
+	@When("User enter invalid data (.*) ands (.*)")
+	def enterInvalidDataUsernameAndPassword(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/PracticeGherkin/Login Page/usernameField'), username)
+		WebUI.setText(findTestObject('Object Repository/PracticeGherkin/Login Page/passwordField'), password)
 	}
 
-	@And("User click Login button on Cura Login page")
-	def clickLoginBtn() {
+	@When("User input (.*) ")
+	def enterUsernameonLoginPage(String username) {
+		WebUI.setText(findTestObject('Object Repository/PracticeGherkin/Login Page/usernameField'), username)
+	}
+
+	@When("User input (.*) ")
+	def enterUsernameonSearchingPage(String password) {
+		WebUI.setText(findTestObject('Object Repository/PracticeGherkin/Login Page/passwordField'), password)
+	}
+
+	@And("User click Login button on Cura Login pages")
+	def clickLoginBtnonCuraLoginPages() {
 		WebUI.click(findTestObject('Object Repository/Cura Healthcare/Login Page/loginBtn'))
 	}
 
-	@Then("User redirect to Appointment page")
-	def redirectToAppointmentPage() {
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Cura Healthcare/Appointment Page/facilityDropdown'), 0)
-		//WebUI.closeBrowser()
-	}
-
-	@When("User enter invalid data (.*) and (.*)")
-	def enterInvalidData(String username, String password) {
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/usernameField'), username)
-		WebUI.setText(findTestObject('Object Repository/Cura Healthcare/Login Page/passwordFIeld'), password)
-	}
-
-	@Then("User expect to see error message on Login page")
-	def seeErrorMessageonLoginPage() {
+	@Then("User expect to see error message on Login pages")
+	def User_redirect_to_Appointment_page() {
 		WebUI.verifyTextPresent('Login failed! Please ensure the username and password are valid.', false)
+		//WebUI.verifyElementVisible(findTestObject)
 		WebUI.closeBrowser()
-	}
-
-	def userValidLogin() {
-		accessCura()
-		enterValidUsernamePasswordCura()
-		clickLoginBtn()
-		redirectToAppointmentPage()
 	}
 }

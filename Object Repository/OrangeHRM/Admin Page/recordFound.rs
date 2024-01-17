@@ -11,18 +11,18 @@
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class = 'oxd-table-cell oxd-padding-cell' and @role = 'row']</value>
+         <value>//*[@role = 'row']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
       <value>oxd-table-cell oxd-padding-cell</value>
-      <webElementGuid>36c78465-0dc0-432d-9248-162d59415386</webElementGuid>
+      <webElementGuid>0a79dca6-fe70-42e3-ada5-2593726bf053</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Record Found</value>
-      <webElementGuid>c3ee33d0-e569-44b0-a943-dc306339bddc</webElementGuid>
+      <webElementGuid>2e05298c-863a-4cdd-8750-0afdd29810d0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,6 +38,6 @@
       <name>role</name>
       <type>Main</type>
       <value>row</value>
-      <webElementGuid>d3e2a1d3-bbb8-4411-872a-d4ec3d3e265d</webElementGuid>
+      <webElementGuid>5309a60d-2c5e-40a7-b1b3-17d1b87cf4a2</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
