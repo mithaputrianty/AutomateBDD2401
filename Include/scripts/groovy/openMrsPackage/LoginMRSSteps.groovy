@@ -52,6 +52,7 @@ class LoginMRSSteps {
 		WebUI.navigateToUrl(GlobalVariable.baseUrl)
 	}
 
+	//Valid Case
 	@When("User input valid username (.*) on Open MRS")
 	def inputValidUsernameOpenMRS(String username) {
 		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/usernameField'), username)
@@ -116,5 +117,21 @@ class LoginMRSSteps {
 			WebUI.verifyTextPresent('Logged in as Super User (admin) at Registration Desk.', false)
 		}
 		WebUI.closeBrowser()
+	}
+	
+	//Invalid case
+	@When("User input invalid username (.*) on Open MRS")
+	def inputInvalidUsernameOpenMRS(String username) {
+		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/usernameField'), username)
+	}
+
+	@And("User input invalid password (.*) on Open MRS")
+	def inputInvalidPasswordOpenMRS(String password) {
+		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/passwordField'), password)
+	}
+	
+	@Then("User expect to see error message on Login Page in Open MRS")
+	def expectToSeeErrorMessageOnOpenMRS() {
+		WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/loginPage/alertMessage'))
 	}
 }
