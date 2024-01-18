@@ -147,7 +147,6 @@ class RegisterPatient {
 
 	@And("User input birth year(.*)")
 	def user_input_birth_year(String byear) {
-//		WebUI.delay(1)	
 		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthyear_field"), byear)
 	}
 
