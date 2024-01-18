@@ -104,7 +104,7 @@ class RegisterPatient {
 		 WebUI.verifyTextPresent('Logged in as Super User (admin) at Registration Desk.', false)
 		 }*/
 	}
-	
+
 	@Given("User click register icon")
 	def user_click_register_icon() {
 		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/regist_icon"))
@@ -130,9 +130,9 @@ class RegisterPatient {
 		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/next_button"))
 	}
 
-	@And("User select gender(.*)")
-	def user_select_gender(String gender) {
-		WebUI.selectOptionByValue("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/select_gender", gender, false)
+	@And("User select gender")
+	def user_select_gender() {
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/gender_male"))
 	}
 
 	@And("User input birth date(.*)")
@@ -142,11 +142,12 @@ class RegisterPatient {
 
 	@And("User select birth month(.*)")
 	def user_input_birth_month(String bmonth) {
-		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthmonth_field"), bmonth)
+		WebUI.selectOptionByIndex(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthmonth_field"), bmonth)
 	}
 
 	@And("User input birth year(.*)")
 	def user_input_birth_year(String byear) {
+//		WebUI.delay(1)	
 		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthyear_field"), byear)
 	}
 
@@ -212,6 +213,5 @@ class RegisterPatient {
 
 	@Then("User registration should be successful")
 	def user_registration_should_be_successful(String status) {
-		
 	}
 }

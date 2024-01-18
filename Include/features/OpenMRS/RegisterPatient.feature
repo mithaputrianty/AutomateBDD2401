@@ -30,7 +30,7 @@ Feature: Register a new patient
     And User input middle name <middle>
     And User input family name <family>
     And User click button next
-    And User select gender <gender>
+    And User select gender
     And User click button next
     And User input birth date <bdate>
     And User select birth month <bmonth>
@@ -55,4 +55,4 @@ Feature: Register a new patient
 
     Examples: 
       | given  | middle | family 	 | gender | bdate | bmonth | byear | eyear | emonth | address1 | address2 | city 		| state 		 | country 	 | postal | phone 			 | relative 															| person |
-      | Haris  | D		  | Abdullah | M			| 4			| 4			 | 1996	 | 27		 | 9			| Testing1 | Testing2 | Bandung	| Jawa Barat | Indonesia | 40212	| 081547115471 | 8d91a01c-c2cc-11de-8d13-0010c6dffd0f-A |	Ina		 |
+      | Haris  | D		  | Abdullah | M			| 4			| 4	 		 | 1996	 | 27		 | 9			| Testing1 | Testing2 | Bandung	| Jawa Barat | Indonesia | 40212	| 081547115471 | 8d91a01c-c2cc-11de-8d13-0010c6dffd0f-A |	Ina		 |
