@@ -7,17 +7,29 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//input[contains(@class,'person-typeahead ng-valid')])[1]</value>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[contains(@class,'person-typeahead ng-pristine')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
       <value>(//input[contains(@class,'person-typeahead ng-valid')])[1]</value>
-      <webElementGuid>fa5c69d3-570a-4371-8a4b-61a8da41ce0e</webElementGuid>
+      <webElementGuid>c3dc3737-89b3-4c01-90cc-ececc9eb862b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Person Name</value>
+      <webElementGuid>38cc90dc-75ee-48d7-9572-eca2ff04f933</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

@@ -19,7 +19,7 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.w
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.testng.keyword.internal.TestNGDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('C:\\Users\\haris\\AppData\\Local\\Temp\\Katalon\\Include\\features\\OpenMRS\\RegisterPatient.feature\\20240118_164344\\execution.properties')
+RunConfiguration.setExecutionSettingFile('C:\\Users\\haris\\AppData\\Local\\Temp\\Katalon\\Include\\features\\OpenMRS\\RegisterPatient.feature\\20240119_105926\\execution.properties')
 
 TestCaseMain.beforeStart()
 TestCaseMain.runFeatureFile('Include/features/OpenMRS/RegisterPatient.feature')

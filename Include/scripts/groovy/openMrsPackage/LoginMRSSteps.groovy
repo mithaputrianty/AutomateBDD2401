@@ -118,7 +118,7 @@ class LoginMRSSteps {
 		}
 		WebUI.closeBrowser()
 	}
-	
+
 	//Invalid case
 	@When("User input invalid username (.*) on Open MRS")
 	def inputInvalidUsernameOpenMRS(String username) {
@@ -129,7 +129,7 @@ class LoginMRSSteps {
 	def inputInvalidPasswordOpenMRS(String password) {
 		WebUI.setText(findTestObject('Object Repository/OpenMRS/loginPage/passwordField'), password)
 	}
-	
+
 	@Then("User expect to see error message on Login Page in Open MRS")
 	def expectToSeeErrorMessageOnOpenMRS() {
 		WebUI.verifyElementVisible(findTestObject('Object Repository/OpenMRS/loginPage/alertMessage'))

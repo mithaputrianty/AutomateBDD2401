@@ -7,18 +7,22 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id = 'fr3556-field' and @name = 'phoneNumber']</value>
+         <value>//*[@name = 'phoneNumber']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
       <value>fr3556-field</value>
-      <webElementGuid>d2664f1f-42ab-408d-8400-3e813c2bab78</webElementGuid>
+      <webElementGuid>cb8f52d9-b3a7-4b75-bb98-4cdca2478bd4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -26,6 +30,14 @@
       <name>name</name>
       <type>Main</type>
       <value>phoneNumber</value>
-      <webElementGuid>95038c48-502a-44b7-adf5-c50167e7fea6</webElementGuid>
+      <webElementGuid>f7e37019-6e18-4edd-8544-0ed1c25d109e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@class='phone focused']</value>
+      <webElementGuid>d9ab953e-c011-4dd0-a3ad-78a774737b1f</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

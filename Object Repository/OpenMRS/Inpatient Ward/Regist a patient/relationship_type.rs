@@ -7,25 +7,33 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id = 'relationship_type' and @name = 'relationship_type']</value>
+         <value>//*[@data-val = 'Sibling']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
       <value>relationship_type</value>
-      <webElementGuid>59e6d31f-f191-48fa-b2fe-3e829f561c32</webElementGuid>
+      <webElementGuid>980525bb-42ad-481a-820c-b1bbe5e392ce</webElementGuid>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
       <value>relationship_type</value>
-      <webElementGuid>9297c002-c613-4dd6-b7c6-6eefdb69a292</webElementGuid>
+      <webElementGuid>7ad2dba1-f09c-4689-9794-c29783e878ff</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>data-val</name>
+      <type>Main</type>
+      <value>Sibling</value>
+      <webElementGuid>4778ee76-3549-4942-903c-10393f4f7a10</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

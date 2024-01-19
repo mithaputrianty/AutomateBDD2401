@@ -54,5 +54,5 @@ Feature: Register a new patient
     Then User registration should be successful
 
     Examples: 
-      | given  | middle | family 	 | gender | bdate | bmonth | byear | eyear | emonth | address1 | address2 | city 		| state 		 | country 	 | postal | phone 			 | relative 															| person |
-      | Haris  | D		  | Abdullah | M			| 4			| 4	 		 | 1996	 | 27		 | 9			| Testing1 | Testing2 | Bandung	| Jawa Barat | Indonesia | 40212	| 081547115471 | 8d91a01c-c2cc-11de-8d13-0010c6dffd0f-A |	Ina		 |
+      | given  | middle | family 	 | gender | bdate | bmonth | byear | eyear | emonth | address1 | address2 | city 		| state 		 | country 	 | postal | phone 			 | relative | person |
+      | Haris  | D		  | Abdullah | M			| 4			| 4	 		 | 1996	 | 27		 | 9			| Testing1 | Testing2 | Bandung	| Jawa Barat | Indonesia | 40212	| 081547115471 | 2			  |	Ina		 |

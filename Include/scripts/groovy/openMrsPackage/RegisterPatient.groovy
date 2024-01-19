@@ -1,46 +1,14 @@
 package openMrsPackage
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.checkpoint.Checkpoint
-import com.kms.katalon.core.checkpoint.CheckpointFactory
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.testcase.TestCase
-import com.kms.katalon.core.testcase.TestCaseFactory
-import com.kms.katalon.core.testdata.TestData
-import com.kms.katalon.core.testdata.TestDataFactory
-import com.kms.katalon.core.testobject.ObjectRepository
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.logging.KeywordLogger
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
-import internal.GlobalVariable
-
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By
-
-import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
-import com.kms.katalon.core.webui.driver.DriverFactory
-
-import com.kms.katalon.core.testobject.RequestObject
-import com.kms.katalon.core.testobject.ResponseObject
-import com.kms.katalon.core.testobject.ConditionType
-import com.kms.katalon.core.testobject.TestObjectProperty
-
-import com.kms.katalon.core.mobile.helper.MobileElementCommonHelper
-import com.kms.katalon.core.util.KeywordUtil
-
-import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
 import cucumber.api.java.en.And
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
+import internal.GlobalVariable
 
 
 
@@ -147,7 +115,9 @@ class RegisterPatient {
 
 	@And("User input birth year(.*)")
 	def user_input_birth_year(String byear) {
-		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthyear_field"), byear)
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthyear_field"))
+		WebUI.delay(1)
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/birthyear_field"), byear.trim())
 	}
 
 	@And("User input estimated year(.*)")
@@ -192,16 +162,19 @@ class RegisterPatient {
 
 	@And("User input phone number(.*)")
 	def user_input_phone_number(String phone) {
-		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/phone_numer"), phone)
+		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/phone_number"), phone)
 	}
 
 	@And("User select relative(.*)")
 	def user_select_relative(String relative) {
-		WebUI.selectOptionByValue("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/relation_type", relative, false)
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/relationship_type"))
+//		WebUI.selectOptionByIndex(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/relationship_type"), relative)
+//		WebUI.delay(1)
 	}
 
 	@And("User input person name(.*)")
 	def user_input_person_name(String person) {
+		WebUI.click(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/person_name"))
 		WebUI.setText(findTestObject("Object Repository/OpenMRS/Inpatient Ward/Regist a patient/person_name"), person)
 	}
 
@@ -211,6 +184,9 @@ class RegisterPatient {
 	}
 
 	@Then("User registration should be successful")
-	def user_registration_should_be_successful(String status) {
+	def user_registration_should_be_successful() {
+		KeywordLogger log = new KeywordLogger()
+		log.logInfo("Register Success")
+		WebUI.closeBrowser()
 	}
 }
